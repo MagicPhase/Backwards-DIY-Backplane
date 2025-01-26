@@ -33,7 +33,7 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 
 The backplane has 3 SBC slots. While all are ISA compatible, slots 1 and 2 are dedicated to PISA/PCISA and Allen Bradley-style SBCs.
 
-This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. [Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout). 
+This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of.
 
 JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated! Please refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
 
@@ -44,7 +44,7 @@ To make this backplane "universal", I've included a PCI mapper card that can be 
 
 This is an example of an Allen Bradley 6189-1CPU233.
 
-The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. JP1 (reset function) should be in position 2 (right). Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
+The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. JP1 (reset function) should be in position 2 (right). Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. Also, refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
 
 # Usage with ISA SBCs
 
