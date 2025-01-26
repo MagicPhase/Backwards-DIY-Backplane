@@ -9,6 +9,7 @@
 * [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
 * [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
 * [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
+* Known working SBC list
 
 The Backwards Backplane is a universal backplane that's compatible with the PISA/PCISA and Allen Bradley/Rockwell Automation half-size single-board computers (SBC).
 
@@ -39,6 +40,14 @@ To make this backplane "universal", I've included a PCI mapper card that can be 
 This is an example of an Allen Bradley 6189-1CPU233.
 
 The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a ground pin for the PISA spec. Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
+
+# Usage with ISA SBCs
+
+<img src="https://github.com/user-attachments/assets/0516259f-c003-428b-82a8-ad9159c8af59" width=50% height=50%><br>
+
+This is an example of an ISA half-size SBC (Advantech PCA-6145B). 
+
+The three SBC slots 1,2 and,3 are all compatible with ISA SBCs. This is possible in slots 1 and 2 due to their dual-level pin nature and the upper row being all pins related to the ISA BUS. While you can use ISA SBCs in any slot, there are a few things to remember. The pins of the SBC dual-level slots have reduced widths based on the slot type's specifications. This means the current carrying capability of these pins is also reduced. When using an ISA SBC, you should install this card into SBC slot 3 which is a true ISA slot. If using SBC slot 1 or 2, you may want to consider powering the SBC using its auxiliary power connection if you experience any instability. This aux power input will be specific to the manufacture and you should refer to the manual of the board you're using. 
 
 # JP1 Reset Function
 
@@ -138,4 +147,15 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 
 # Backwards V1.0 Schematic
 [Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/Backplane_V1.0_schematic.pdf)
+
+# Known working SBC list
+
+This is a list of SBCs known to work with additional information.
+
+## PISA/PCISA Boards
+
+
+
+## Allen Bradley/Rockwell Automation Boards
+
 
