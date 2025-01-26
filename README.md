@@ -42,7 +42,7 @@ To make this backplane "universal", I've included a PCI mapper card that can be 
 
 This is an example of an Allen Bradley 6189-1CPU233.
 
-The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
+The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. JP1 (reset function) should be in position 2 (right). Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
 
 # Usage with ISA SBCs
 
@@ -71,7 +71,7 @@ To double-check for correct configuration with PCISA SBCs, attach the ATX power 
 
 <img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=33% height=33%><br>
 
-To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
+To properly use an Allen Bradley SBC, jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
