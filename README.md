@@ -29,10 +29,42 @@ To double-check for correct configuration with PCISA SBCs, attach the ATX power 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
 
-<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
 
-This is a picture of the mapper card with all position filled which is NOT CORRECT!
-The proper configuration of the mapper card consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor. For reference, the PISA spec has PCI1 (0 in my design) connected to AD19 and PCI2 (1 in my design) connected to AD20. These PCI addresses are specific to the SBC and may vary depending on the adherence to the PISA spec. 
+The board supports RESET for the SBC with some conditions. JP1 (reset function) needs to be set correctly and the SBC needs to support reset on the SBC slot. For PCISA cards, this is pin C22 (column C pin 22 lower row) on the SBC slot. This pin is pulled to ground through a 500 ohm resistor through the RESET switch SW2. Determining whether your SBC supports resetting through the slot pin might be found in the manual for your specific board, or simply trying the reset button on the backplane to see if it works. Also, your board may support resetting, but the connection may be unpopulated on the SBC itself. For instance, on my PCISA-C400R-RS, the reset line through R157 on the SBC was missing. After installing a 500 ohm resistor, the reset function works as expected.
+
+<img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
+
+## Usage with Allen Bradley/Rockwell Automation SBCs
+
+<img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
+
+This is an example of an Allen Bradley 6189-1CPU233.
+
+The Allen Bradley SBCs use a propriatary implimentation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
+
+## JP2 and JP3 power pins
+
+To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse in good. F1 should be a 5A fuse.
+
+<img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
+
+![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
+
+JP4 VBAT.
+
+The Allen Bradley SBCs CMOS battery is located on the backpkane in favor of a super capacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and time keeping operation. 
+
+## Important
+Since the Allen Bradley SBC doesn't have a CMOS battery, it will loose its settings if left uninstalled in the backplant once its super capacitor is depleated. Upon a fresh install, the SBC may remain non-functional for a piode of time until the super capacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
+
+
+## PCI Mapper Card
+
+<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
+<img src="https://github.com/user-attachments/assets/fb8db581-3757-430e-b493-7f4487c268f4" width=50% height=50%><br>
+
+The mapper card is reversable. This is a picture with all position filled which is NOT CORRECT!
+The proper configuration of the mapper card for PISA consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor. For reference, the PISA spec has PCI1 (0 in my design) connected to AD19 and PCI2 (1 in my design) connected to AD20. These PCI addresses are specific to the SBC and may vary depending on the adherence to the PISA spec. 
 
 Next is the interrupt matrix that consists of 4 (INT) interrupt lines from the SBC. The idea is to connect one of the intersecting lines with a 0 ohm resistor between each row (SBC side) to one of the columns (PCI side). The PISA spec states a standard configuration as follows.
 
@@ -59,28 +91,7 @@ PCI2 (1 in my design)
 * SBC INT C to PCI D
 * SBC INT D to PCI A
 
-The board supports RESET for the SBC with some conditions. JP1 (reset function) needs to be set correctly and the SBC needs to support reset on the SBC slot. For PCISA cards, this is pin C22 (column C pin 22 lower row) on the SBC slot. This pin is pulled to ground through a 500 ohm resistor through the RESET switch SW2. Determining whether your SBC supports resetting through the slot pin might be found in the manual for your specific board, or simply trying the reset button on the backplane to see if it works. Also, your board may support resetting, but the connection may be unpopulated on the SBC itself. For instance, on my PCISA-C400R-RS, the reset line through R157 on the SBC was missing. After installing a 500 ohm resistor, the reset function works as expected.
-
-<img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
-
-## Usage with Allen Bradley/Rockwell Automation SBCs
-
-<img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
-
-This is an example of an Allen Bradley 6189-1CPU233.
-
-The Allen Bradley SBCs use a propriatary implimentation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
-
-## JP2 and JP3 power pins
-
-To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse in good. F1 should be a 5A fuse.
-
-<img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
-
-<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
-
-This is a picture of the mapper card with all position filled which is NOT CORRECT!
-The proper configuration of the mapper card consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resisotrs. The Rockweell backplane connections are as follow.
+* The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resisotrs. The Rockwell backplane connections are as follow.
 
 PCI1 (0 in my design)
 * IDSEL A28
@@ -95,12 +106,3 @@ PCI2 (1 in my design)
 * SBC INT B to PCI D
 * SBC INT C to PCI C
 * SBC INT D to PCI A
-
-![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
-
-JP4 VBAT.
-
-The Allen Bradley SBCs CMOS battery is located on the backpkane in favor of a super capacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and time keeping operation. 
-
-## Important
-Since the Allen Bradley SBC doesn't have a CMOS battery, it will loose its settings if left uninstalled in the backplant once its super capacitor is depleated. Upon a fresh install, the SBC may remain non-functional for a piode of time until the super capacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
