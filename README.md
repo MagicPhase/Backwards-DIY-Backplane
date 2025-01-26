@@ -16,6 +16,7 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 Active discussion about this project can be found on [VOGONS](https://www.vogons.org/viewtopic.php?t=102519) and [VCFED](https://forum.vcfed.org/index.php?threads/project-backwards-a-universal-backplane-for-pisa-pcisa-allen-bradley-and-isa-half-size-sbcs-seeking-volunteers-for-testing.1250989/)
 
 <img src="https://github.com/user-attachments/assets/c95d8719-b80a-44b2-b4d6-e13d983e4513" width=75% height=75%><br>
+<img src="https://github.com/user-attachments/assets/4e58e20b-b4cf-4450-8b60-b019ba01f1a5" width=75% height=75%><br>
 
 ## Features:
 * Two 188-pin PCI/ISA combination slots
