@@ -24,7 +24,7 @@ This is an example of a compatible PCISA SBC you can use in the Backwards backpl
 ## -IMPORTANT- 
 To double-check for correct configuration with PCISA SBCs, attach the ATX power supply with all other cards removed and power up the backplane. The LED indicators for the AB CPU 3.3V power should be unlit! This is important for proper function as the universal nature of the board utilizes these pins for CPU power on the Allen Bradley cards while conflicting with the PISA spec. While powering a PCISA card, the indicators may light up and that's normal. The important thing to consider is the indicators are unlit with no card installed!
 
-<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=50% height=50%><br>
+<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=33% height=33%><br>
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
@@ -62,6 +62,17 @@ The board supports RESET for the SBC with some conditions. JP1 (reset function) 
 
 <img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
 
+## Usage with Allen Bradley/Rockwell Automation SBCs
+
+<img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
+
+This is an example of an Allen Bradley 6189-1CPU233.
+
+The Allen Bradley SBCs use a propriatary implimentation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
+
+To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse in good. F1 should be a 5A fuse.
+
+<img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
 
 
