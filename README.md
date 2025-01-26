@@ -17,7 +17,7 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 
 ## Usage with PISA/PCISA SBCs
 
-![PCISA-C400R-RS-R20](https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79)
+<img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
 
 This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers should be unpopulated, as well as JP4 (VBAT).
 
