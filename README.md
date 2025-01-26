@@ -16,14 +16,14 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 * PCI mapper card
 
 ## Index
-Usage with PISA/PCISA SBCs
-Usage with Allen Bradley/Rockwell Automation SBCs
-JP2 and JP3 power pins
-JP4 VBAT
-PCI Mapper Card
-Mounting
-PCB Layout
-Backwards V1.0 Schematic
+* [Usage with PISA/PCISA SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-pisapcisa-sbcs)
+* [Usage with Allen Bradley/Rockwell Automation SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-allen-bradleyrockwell-automation-sbcs)
+* [JP2 and JP3 power pins](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp2-and-jp3-power-pins)
+* [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
+* [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
+* [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
+* [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
+* [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
 
 ## Usage with PISA/PCISA SBCs
 
