@@ -159,14 +159,14 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 
 This is a list of SBCs known to work with additional information.
 
-## PISA/PCISA Boards
-IEI PCISA-C400R-RS-R20 Ceneron 400Mhz -- WORKING
-PHOENIX TECHNOLOGIES LY20C390 (Fuba 3104ML) 1Ghz VIA -- WORKING
+### PISA/PCISA Boards
+* IEI PCISA-C400R-RS-R20 Ceneron 400Mhz -- WORKING
+* PHOENIX TECHNOLOGIES LY20C390 (Fuba 3104ML) 1Ghz VIA -- WORKING
 
 
-## Allen Bradley/Rockwell Automation Boards
-Allen Bradley 6189-1CPU233 (Rockwell Automation 140420-050) Socket 7 Intel MMX/AMD K6-2 -- WORKING
-Allen Bradley 6189-1CPU566 (Rockwell Automation 140573-010) Socket 370 Intel -- WORKING
+### Allen Bradley/Rockwell Automation Boards
+* Allen Bradley 6189-1CPU233 (Rockwell Automation 140420-050) Socket 7 Intel MMX/AMD K6-2 -- WORKING
+* Allen Bradley 6189-1CPU566 (Rockwell Automation 140573-010) Socket 370 Intel -- WORKING
 
-## ISA SBCs
-Advantech PCA-6145B -- WORKING
+### ISA SBCs
+* Advantech PCA-6145B -- WORKING
