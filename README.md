@@ -3,6 +3,7 @@
 ## Index
 * [Usage with PISA/PCISA SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-pisapcisa-sbcs)
 * [Usage with Allen Bradley/Rockwell Automation SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-allen-bradleyrockwell-automation-sbcs)
+* JP1 Reset Function
 * [JP2 and JP3 power pins](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp2-and-jp3-power-pins)
 * [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
 * [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
@@ -53,7 +54,7 @@ JP1 controls which SBC slot pin is connected to the reset switch SW2. JP1 (reset
 
 <img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
 
-
+The Allen Bradley SBCs use pin C43 (column C pin 43) on the SBC slots.
 
 # JP2 and JP3 power pins
 
