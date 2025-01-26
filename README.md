@@ -137,6 +137,5 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 <img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=75% height=75%><br>
 
 # Backwards V1.0 Schematic
-[Backplane_V1.0_schematic.pdf](https://github.com/user-attachments/files/18549282/Backplane_V1.0_schematic.pdf)
-
+[Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/Backplane_V1.0_schematic.pdf)
 
