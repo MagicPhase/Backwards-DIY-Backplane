@@ -26,21 +26,14 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 * PCI mapper card
 
 
-# Usage with PISA/PCISA SBCs
+# Usage with PISA/PCISA and Allen Bradley/Rockwell SBCs
 
 <img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
 
-This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers should be unpopulated, as well as JP4 (VBAT).
-
-## -IMPORTANT- 
-To double-check for correct configuration with PCISA SBCs, attach the ATX power supply with all other cards removed and power up the backplane. The LED indicators for the AB CPU 3.3V power should be unlit! This is important for proper function as the universal nature of the board utilizes these pins for CPU power on the Allen Bradley cards while conflicting with the PISA spec. While powering a PCISA card, the indicators may light up and that's normal. The important thing to consider is the indicators are unlit with no card installed!
-
-<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=33% height=33%><br>
+This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated!
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
-
-# Usage with Allen Bradley/Rockwell Automation SBCs
 
 <img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
 
@@ -57,6 +50,11 @@ JP1 controls which SBC slot pin is connected to the reset switch SW2. JP1 (reset
 The Allen Bradley SBCs use pin C43 (column C pin 43) on the SBC slots.
 
 # JP2 and JP3 power pins
+
+## -IMPORTANT- 
+To double-check for correct configuration with PCISA SBCs, attach the ATX power supply with all other cards removed and power up the backplane. The LED indicators for the AB CPU 3.3V power should be unlit! This is important for proper function as the universal nature of the board utilizes these pins for CPU power on the Allen Bradley cards while conflicting with the PISA spec. While powering a PCISA card, the indicators may light up and that's normal. The important thing to consider is the indicators are unlit with no card installed!
+
+<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=33% height=33%><br>
 
 To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
 
