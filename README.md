@@ -39,18 +39,21 @@ To double-check for correct configuration with PCISA SBCs, attach the ATX power 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
 
-
-The board supports RESET for the SBC with some conditions. JP1 (reset function) needs to be set correctly and the SBC needs to support reset on the SBC slot. For PCISA cards, this is pin C22 (column C pin 22 lower row) on the SBC slot. This pin is pulled to ground through a 500 ohm resistor through the RESET switch SW2. Determining whether your SBC supports resetting through the slot pin might be found in the manual for your specific board, or simply trying the reset button on the backplane to see if it works. Also, your board may support resetting, but the connection may be unpopulated on the SBC itself. For instance, on my PCISA-C400R-RS, the reset line through R157 on the SBC was missing. After installing a 500 ohm resistor, the reset function works as expected.
-
-<img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
-
 # Usage with Allen Bradley/Rockwell Automation SBCs
 
 <img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
 
 This is an example of an Allen Bradley 6189-1CPU233.
 
-The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
+The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a ground pin for the PISA spec. Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
+
+# JP1 Reset Function
+
+JP1 controls which SBC slot pin is connected to the reset switch SW2. JP1 (reset function) needs to be set correctly while the SBC needs to support reset on the SBC slot to work. For PCISA cards, this is pin C22 (column C pin 22 lower row) on the SBC slot. This pin is pulled to ground through a 500 ohm resistor through the RESET switch SW2. Determining whether your SBC supports resetting through the slot pin might be found in the manual for your specific board, or simply trying the reset button on the backplane to see if it works. Also, your board may support resetting, but the connection may be unpopulated on the SBC itself. For instance, on my PCISA-C400R-RS, the reset line through R157 on the SBC was missing. After installing a 500 ohm resistor, the reset function works as expected.
+
+<img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
+
+
 
 # JP2 and JP3 power pins
 
@@ -63,10 +66,10 @@ To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (ri
 ![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
 
 
-The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
+The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered through a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
 
 ## Important
-Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settings if left uninstalled in the backplane once its supercapacitor is depleted. Upon a fresh install, the SBC may remain non-functional for a piode of time until the supercapacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
+Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settings if left uninstalled in the backplane once its supercapacitor is depleted. Upon a fresh install, the SBC may remain non-functional for a period of time until the supercapacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
 
 
 # PCI Mapper Card
