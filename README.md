@@ -31,6 +31,8 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 
 <img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
 
+The backplane has 3 SBC slots. While all are ISA compatible, slots 1 and 2 are dedicated to PISA/PCISA and Allen Bradley-style SBCs.
+
 This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. [Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout). JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated!
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
