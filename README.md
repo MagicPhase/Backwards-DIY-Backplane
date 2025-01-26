@@ -1,9 +1,18 @@
 # Backwards-DIY-Backplane
 
+## Index
+* [Usage with PISA/PCISA SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-pisapcisa-sbcs)
+* [Usage with Allen Bradley/Rockwell Automation SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-allen-bradleyrockwell-automation-sbcs)
+* [JP2 and JP3 power pins](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp2-and-jp3-power-pins)
+* [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
+* [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
+* [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
+* [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
+* [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
+
 The Backwards Backplane is a universal backplane that's compatible with the PISA/PCISA and Allen Bradley/Rockwell Automation half-size single-board computers (SBC).
 
 <img src="https://github.com/user-attachments/assets/c95d8719-b80a-44b2-b4d6-e13d983e4513" width=75% height=75%><br>
-<img src="https://github.com/user-attachments/assets/559ba853-a072-47d8-a7b5-47c418ef2e72" width=75% height=75%><br>
 
 ## Features:
 * Two 188-pin PCI/ISA combination slots
@@ -15,17 +24,8 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 * ATX power input
 * PCI mapper card
 
-## Index
-* [Usage with PISA/PCISA SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-pisapcisa-sbcs)
-* [Usage with Allen Bradley/Rockwell Automation SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#usage-with-allen-bradleyrockwell-automation-sbcs)
-* [JP2 and JP3 power pins](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp2-and-jp3-power-pins)
-* [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
-* [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
-* [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
-* [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
-* [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
 
-## Usage with PISA/PCISA SBCs
+# Usage with PISA/PCISA SBCs
 
 <img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
 
@@ -44,7 +44,7 @@ The board supports RESET for the SBC with some conditions. JP1 (reset function) 
 
 <img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
 
-## Usage with Allen Bradley/Rockwell Automation SBCs
+# Usage with Allen Bradley/Rockwell Automation SBCs
 
 <img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
 
@@ -52,13 +52,13 @@ This is an example of an Allen Bradley 6189-1CPU233.
 
 The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
 
-## JP2 and JP3 power pins
+# JP2 and JP3 power pins
 
 To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
-## JP4 VBAT.
+# JP4 VBAT.
 
 ![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
 
@@ -69,7 +69,7 @@ The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a su
 Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settings if left uninstalled in the backplane once its supercapacitor is depleted. Upon a fresh install, the SBC may remain non-functional for a piode of time until the supercapacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
 
 
-## PCI Mapper Card
+# PCI Mapper Card
 
 <img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
 <img src="https://github.com/user-attachments/assets/fb8db581-3757-430e-b493-7f4487c268f4" width=50% height=50%><br>
@@ -121,7 +121,7 @@ PCI2 (1 in my design)
 * SBC INT C to PCI C
 * SBC INT D to PCI A
 
-## Mounting
+# Mounting
 
 Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damage. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
 
@@ -131,11 +131,11 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 
 <img src="https://github.com/user-attachments/assets/570bd0ce-b6bc-40f8-8044-f34d3999328a" width=50% height=50%><br>
 
-## PCB Layout
+# PCB Layout
 
 <img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
 
-## Backwards V1.0 Schematic
+# Backwards V1.0 Schematic
 [Backplane_V1.0_schematic.pdf](https://github.com/user-attachments/files/18549282/Backplane_V1.0_schematic.pdf)
 
 
