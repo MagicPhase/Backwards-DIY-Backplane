@@ -12,7 +12,7 @@
 * [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
 * [Known working SBC list](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/README.md#known-working-sbc-list)
 
-The Backwards Backplane is a universal backplane that's compatible with the PISA/PCISA and Allen Bradley/Rockwell Automation half-size single-board computers (SBC). <ins>Please ALL sections before using the Backplane!!</ins>
+The Backwards Backplane is a universal backplane that's compatible with the PISA/PCISA and Allen Bradley/Rockwell Automation half-size single-board computers (SBC). <ins>Please read ALL sections before using the Backplane!!</ins>
 Active discussion about this project can be found on [VOGONS](https://www.vogons.org/viewtopic.php?t=102519) and [VCFED](https://forum.vcfed.org/index.php?threads/project-backwards-a-universal-backplane-for-pisa-pcisa-allen-bradley-and-isa-half-size-sbcs-seeking-volunteers-for-testing.1250989/)
 
 <img src="https://github.com/user-attachments/assets/c95d8719-b80a-44b2-b4d6-e13d983e4513" width=75% height=75%><br>
