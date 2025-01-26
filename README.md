@@ -71,6 +71,8 @@ This is an example of an Allen Bradley 6189-1CPU233.
 
 The Allen Bradley SBCs use a propriatary implimentation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
 
+## JP2 and JP3 power pins
+
 To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse in good. F1 should be a 5A fuse.
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
@@ -94,3 +96,11 @@ PCI2 (1 in my design)
 * SBC INT C to PCI C
 * SBC INT D to PCI A
 
+![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
+
+JP4 VBAT.
+
+The Allen Bradley SBCs CMOS battery is located on the backpkane in favor of a super capacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and time keeping operation. 
+
+## Important
+Since the Allen Bradley SBC doesn't have a CMOS battery, it will loose its settings if left uninstalled in the backplant once its super capacitor is depleated. Upon a fresh install, the SBC may remain non-functional for a piode of time until the super capacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
