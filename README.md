@@ -29,7 +29,7 @@ The Backwards Backplane is a universal backplane that's compatible with the PISA
 
 <img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
 
-This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated!
+This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of. Please refer to the board diagram sheet for more information. [Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout). JP1 (reset function) should be moved to position one (left). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated!
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
@@ -134,7 +134,7 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 
 # PCB Layout
 
-<img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
+<img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=75% height=75%><br>
 
 # Backwards V1.0 Schematic
 [Backplane_V1.0_schematic.pdf](https://github.com/user-attachments/files/18549282/Backplane_V1.0_schematic.pdf)
