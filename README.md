@@ -2,6 +2,7 @@
 
 ## Index
 * [Usage with PISA/PCISA and Allen Bradley/Rockwell SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main#usage-with-pisapcisa-and-allen-bradleyrockwell-sbcs)
+* [Usage with ISA SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main#usage-with-isa-sbcs)
 * [JP1 Reset Function](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main#jp1-reset-function)
 * [JP2 and JP3 power pins](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp2-and-jp3-power-pins)
 * [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
