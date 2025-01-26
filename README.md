@@ -42,7 +42,7 @@ To make this backplane "universal", I've included a PCI mapper card that can be 
 
 This is an example of an Allen Bradley 6189-1CPU233.
 
-The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a ground pin for the PISA spec. Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
+The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. 
 
 # Usage with ISA SBCs
 
