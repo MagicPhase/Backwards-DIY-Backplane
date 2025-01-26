@@ -40,11 +40,11 @@ The board supports RESET for the SBC with some conditions. JP1 (reset function) 
 
 This is an example of an Allen Bradley 6189-1CPU233.
 
-The Allen Bradley SBCs use a propriatary implimentation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
+The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These pins are left floating under normal conditions.
 
 ## JP2 and JP3 power pins
 
-To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse in good. F1 should be a 5A fuse.
+To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (right). Jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
@@ -52,10 +52,10 @@ To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (rig
 
 ## JP4 VBAT.
 
-The Allen Bradley SBCs CMOS battery is located on the backpkane in favor of a super capacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and time keeping operation. 
+The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
 
 ## Important
-Since the Allen Bradley SBC doesn't have a CMOS battery, it will loose its settings if left uninstalled in the backplant once its super capacitor is depleated. Upon a fresh install, the SBC may remain non-functional for a piode of time until the super capacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
+Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settings if left uninstalled in the backplane once its supercapacitor is depleted. Upon a fresh install, the SBC may remain non-functional for a piode of time until the supercapacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
 
 
 ## PCI Mapper Card
@@ -63,7 +63,7 @@ Since the Allen Bradley SBC doesn't have a CMOS battery, it will loose its setti
 <img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
 <img src="https://github.com/user-attachments/assets/fb8db581-3757-430e-b493-7f4487c268f4" width=50% height=50%><br>
 
-The mapper card is reversable. This is a picture with all position filled which is NOT CORRECT!
+The mapper card is reversible. This is a picture with all positions filled which is NOT CORRECT!
 
 ## PISA/PCISA
 
@@ -94,7 +94,7 @@ PCI2 (1 in my design)
 
 ## Allen Bradley/Rockwell Automation
 
-The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resisotrs. The Rockwell backplane connections are as follow.
+The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resistors. The Rockwell backplane connections are as follows.
 
 PCI1 (0 in my design)
 * IDSEL A28
@@ -112,11 +112,11 @@ PCI2 (1 in my design)
 
 ## Mounting
 
-Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damamge. I'd recommend using smaller than 6.5mm head screws with an isolation washer for insatlling the backplane. A larger pad may be introduced beyond V1.0. 
+Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damamge. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
 
 <img src="https://github.com/user-attachments/assets/cc4594e0-2ad8-470c-b0a9-c9e5b0cea972" width=50% height=50%><br>
 
-Use extremem care when installing your SBC! The 188-pin slots are fragile and pin damamge will occur if you install any card at an angle! 
+Use extreme care when installing your SBC! The 188-pin slots are fragile and pin damage will occur if you install any card at an angle! 
 
 <img src="https://github.com/user-attachments/assets/570bd0ce-b6bc-40f8-8044-f34d3999328a" width=50% height=50%><br>
 
