@@ -48,9 +48,10 @@ To properly use an Allen Bradley SBC, set JP1 (reset function) to position 2 (ri
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
+## JP4 VBAT.
+
 ![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
 
-## JP4 VBAT.
 
 The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered though a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
 
@@ -119,4 +120,11 @@ Be cautious when using screws with heads larger than 6.5mm! Depending on your ca
 Use extreme care when installing your SBC! The 188-pin slots are fragile and pin damage will occur if you install any card at an angle! 
 
 <img src="https://github.com/user-attachments/assets/570bd0ce-b6bc-40f8-8044-f34d3999328a" width=50% height=50%><br>
+
+## PCB Layout
+
+<img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
+
+## Backwards V1.0 Schematic
+
 
