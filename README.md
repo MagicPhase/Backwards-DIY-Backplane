@@ -29,8 +29,9 @@ To double-check for correct configuration with PCISA SBCs, attach the ATX power 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
 
-<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=75% height=75%><br>
+<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
 
+This is a picture of the mapper card with all position filled which is NOT CORRECT!
 The proper configuration of the mapper card consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor. For reference, the PISA spec has PCI1 (0 in my design) connected to AD19 and PCI2 (1 in my design) connected to AD20. These PCI addresses are specific to the SBC and may vary depending on the adherence to the PISA spec. 
 
 Next is the interrupt matrix that consists of 4 (INT) interrupt lines from the SBC. The idea is to connect one of the intersecting lines with a 0 ohm resistor between each row (SBC side) to one of the columns (PCI side). The PISA spec states a standard configuration as follows.
@@ -74,6 +75,22 @@ To properly use an Allen Bradley SBC, set JP1 (reset funtion) to position 2 (rig
 
 <img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
 
+<img src="https://github.com/user-attachments/assets/cab62bd3-f264-4837-8fb7-d1391830cda5" width=50% height=50%><br>
 
+This is a picture of the mapper card with all position filled which is NOT CORRECT!
+The proper configuration of the mapper card consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resisotrs. The Rockweell backplane connections are as follow.
 
+PCI1 (0 in my design)
+* IDSEL A28
+* SBC INT A to PCI C
+* SBC INT B to PCI A
+* SBC INT C to PCI D
+* SBC INT D to PCI B
+
+PCI2 (1 in my design)
+* IDSEL A29
+* SBC INT A to PCI B
+* SBC INT B to PCI D
+* SBC INT C to PCI C
+* SBC INT D to PCI A
 
