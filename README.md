@@ -113,7 +113,7 @@ PCI2 (1 in my design)
 
 ## Mounting
 
-Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damamge. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
+Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damage. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
 
 <img src="https://github.com/user-attachments/assets/cc4594e0-2ad8-470c-b0a9-c9e5b0cea972" width=50% height=50%><br>
 
@@ -126,5 +126,6 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 <img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
 
 ## Backwards V1.0 Schematic
+[Backplane_V1.0_schematic.pdf](https://github.com/user-attachments/files/18549282/Backplane_V1.0_schematic.pdf)
 
 
