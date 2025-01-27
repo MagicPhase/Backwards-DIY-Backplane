@@ -146,6 +146,14 @@ PCI2 (1 in my design)
 
 # Mounting
 
+<img src="https://github.com/user-attachments/assets/a051c71e-e8e7-4669-abf9-af6583eb806c" width=50% height=50%><br>
+
+The backplane has mounting options for two ATX positions. The left-most position "P1" offers two slots free for an ITX system in the same case and the "P2" position offers one space space. There is clearance for cards slightly larger than 2, but some flexibility is lost. The total space available is limited to the PCI mapper card. The absolute max space is 50mm from the ITX PCIe slot to the side of the mapper card. If more space is needed, the PCI mapper card can be removed but only if the PCI slot is left unpopulated! 
+
+<img src="https://github.com/user-attachments/assets/7d4a7a58-1ad2-48a4-9089-6059db5c5104" width=50% height=50%><br>
+
+## Important
+
 Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damage. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
 
 <img src="https://github.com/user-attachments/assets/cc4594e0-2ad8-470c-b0a9-c9e5b0cea972" width=50% height=50%><br>
