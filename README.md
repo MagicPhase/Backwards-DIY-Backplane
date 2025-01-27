@@ -88,7 +88,7 @@ To properly use an Allen Bradley SBC, jumper JP2 and JP3 CPU power pins. To chec
 
 The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered through a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
 
-## Important
+## -Important-
 Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settings if left uninstalled in the backplane once its supercapacitor is depleted. Upon a fresh install, the SBC may remain non-functional for a period of time until the supercapacitor has been charged. Once charged you can power cycle the SBC to restore boot function.
 
 
@@ -152,7 +152,7 @@ The backplane has mounting options for two ATX positions. The left-most position
 
 <img src="https://github.com/user-attachments/assets/7d4a7a58-1ad2-48a4-9089-6059db5c5104" width=50% height=50%><br>
 
-## Important
+## -Important-
 
 Be cautious when using screws with heads larger than 6.5mm! Depending on your case mounting, the standard 6/32" with 8mm head will NOT WORK and short the board possibly causing damage. I'd recommend using smaller than 6.5mm head screws with an isolation washer for installing the backplane. A larger pad may be introduced beyond V1.0. 
 
