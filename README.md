@@ -72,7 +72,7 @@ JP1 controls which SBC slot pin is connected to the reset switch SW2. JP1 (reset
 
 The Allen Bradley SBCs use pin C43 (column C pin 43) on the SBC slots.
 
-# JP2 and JP3 power pins
+# JP2 and JP3 Power Pins
 
 ## -IMPORTANT- 
 To double-check for correct configuration with PCISA SBCs, attach the ATX power supply with all other cards removed and power up the backplane. The LED indicators for the AB CPU 3.3V power should be unlit! This is important for proper function as the universal nature of the board utilizes these pins for CPU power on the Allen Bradley cards while conflicting with the PISA spec. While powering a PCISA card, the indicators may light up and that's normal. The important thing to consider is the indicators are unlit with no card installed!
