@@ -19,7 +19,7 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 <img src="https://github.com/user-attachments/assets/4e58e20b-b4cf-4450-8b60-b019ba01f1a5" width=75% height=75%><br>
 
 ## Features:
-* Two 188-pin PCI/ISA combination slots
+* Two 188-pin PCI/ISA combination slots (Compatible with PISA/PCISA, Allen Bradley/Rockwell Automation, and ISA)
 * One standard ISA slot
 * Two standard PCI slots
 * Integrated P.O.S.T. decoder
