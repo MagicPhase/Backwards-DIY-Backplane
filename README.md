@@ -44,7 +44,9 @@ To make this backplane "universal", I've included a PCI mapper card that can be 
 
 <img src="https://github.com/user-attachments/assets/fc6877e8-5f03-43cd-bfa7-9aac37c5aa42" width=50% height=50%><br>
 
-This is an example of an Allen Bradley 6189-1CPU233.
+This is an example of an Allen Bradley 6189-1CPU233. It's important to note that the Allen Bradley-style SBCs require a physically taller card slot to be secured! The height difference is about 1/4" (6.35 mm) requiring a spacer or riser. This may also be problematic due to the location of external ports above a standard PC card slot. Install with caution or consider a full custom mounting solution for these SBCs.
+
+<img src="https://github.com/user-attachments/assets/b83ff4c6-7840-4eaf-b3a4-d9f72029bcc3" width=50% height=50%><br>
 
 The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset on the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. 
 
