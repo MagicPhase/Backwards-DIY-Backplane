@@ -148,7 +148,7 @@ PCI2 (1 in my design)
 
 <img src="https://github.com/user-attachments/assets/a051c71e-e8e7-4669-abf9-af6583eb806c" width=50% height=50%><br>
 
-The backplane has mounting options for two ATX positions. The left-most position "P1" offers two slots free for an ITX system in the same case and the "P2" position offers one space space. There is clearance for cards slightly larger than 2, but some flexibility is lost. The total space available is limited to the PCI mapper card. The absolute max space is 50mm from the ITX PCIe slot to the side of the mapper card. If more space is needed, the PCI mapper card can be removed but only if the PCI slot is left unpopulated! 
+The backplane has mounting options for two ATX positions. The left-most position "P1" offers two slots free for an ITX system in the same case and the "P2" position offers one space space. There is clearance for cards slightly larger than 2, but some flexibility is lost. The total space available is limited to the PCI mapper card. The absolute max space is 50mm from the ITX PCIe slot to the side of the mapper card. If more space is needed, the PCI mapper card can be removed but only if both PCI slots is left unpopulated! 
 
 <img src="https://github.com/user-attachments/assets/7d4a7a58-1ad2-48a4-9089-6059db5c5104" width=50% height=50%><br>
 
