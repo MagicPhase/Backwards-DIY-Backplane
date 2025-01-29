@@ -33,7 +33,7 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 | [Allen Bradley/Rockwell](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#usage-with-pisapcisa-and-allen-bradleyrockwell-sbcs) | [JP1](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp1-reset-function) (2-3) / [JP2](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp2-and-jp3-power-pins) (CLOSED) / [JP3](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp2-and-jp3-power-pins) (CLOSED) / [JP4](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp4-vbat) (CLOSED) |
 | [ISA](https://github.com/MagicPhase/Backwards-DIY-Backplane/edit/main/README.md#usage-with-isa-sbcs) | NA |
 
-| [SLOTS (IN ORDER)](https://github.com/MagicPhase/Backwards-DIY-Backplane/edit/main/README.md#pcb-layout)  | CARD TYPE USAGE |
+| [SLOTS (IN ORDER)](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#pcb-layout)  | CARD TYPE USAGE |
 | ------------- | ------------- |
 | SBC 1 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
 | SBC 2 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
