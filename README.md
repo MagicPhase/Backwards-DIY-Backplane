@@ -36,9 +36,9 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 
 | [SLOTS (IN ORDER)](https://github.com/MagicPhase/Backwards-DIY-Backplane/edit/main/README.md#pcb-layout)  | CARD TYPE USAGE |
 | ------------- | ------------- |
-| SBC 1 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA |
-| SBC 2 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA |
-| ISA (98-pin) | ISA |
+| SBC 1 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
+| SBC 2 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
+| ISA (98-pin) | ISA Card or SBC |
 | PCI 1 (124-pin) | PCI |
 | PCI 0 (124-pin) | PCI |
 | PCI Mapper (36-pin) | PCI Mapper Card |
@@ -139,7 +139,7 @@ The proper configuration of the mapper card for PISA consists of one IDSEL pin f
 
 ## Allen Bradley/Rockwell Automation
 
-The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resistors. The Rockwell backplane connections are as follows.
+The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resistors. The Rockwell backplane connections are as follows. At the time of this writting, I'm only aware of one configuration set.
 
 | PCI POSITION | IDSEL | SBC INT PIN | PCI INT PIN |
 | ------------- | ------------- | ------------- | ------------- |
