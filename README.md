@@ -102,7 +102,7 @@ To properly use an Allen Bradley SBC, jumper JP2 and JP3 CPU power pins. To chec
 
 # JP4 VBAT.
 
-![image](https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009)
+<img src="https://github.com/user-attachments/assets/5af9674b-41d6-4c17-a7a7-aa7c6593c009" width=50% height=50%><br>
 
 
 The Allen Bradley SBCs CMOS battery is located on the backplane in favor of a supercapacitor on the SBC. This CMOS battery line is injected through the SBC slot and is in conflict with the PISA spec. This CMOS line is powered through a diode from 3.3V and a CR2032 battery (through JP4) located on the backplane. This jumper is required for proper CMOS settings and timekeeping operation. 
@@ -118,7 +118,7 @@ Since the Allen Bradley SBC doesn't have a CMOS battery, it will lose its settin
 
 The mapper card is reversible. This is a picture with all positions filled which is NOT CORRECT!
 
-## PISA/PCISA
+### PISA/PCISA
 
 The proper configuration of the mapper card for PISA consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor. For reference, the PISA spec has PCI1 (0 in my design) connected to AD19 and PCI2 (1 in my design) connected to AD20. These PCI addresses are specific to the SBC and may vary depending on the adherence to the PISA spec. Next is the interrupt matrix that consists of 4 (INT) interrupt lines from the SBC. The idea is to connect one of the intersecting lines with a 0 ohm resistor between each row (SBC side) to one of the columns (PCI side). The PISA spec states a standard configuration as follows.
 
@@ -137,9 +137,9 @@ The proper configuration of the mapper card for PISA consists of one IDSEL pin f
 |  |  | C | D |
 |  |  | D | A | 
 
-### As stated above, not all SBCs work in this manner. You can try the PCI 1 alternate if you experience instability or lockups with the PCI 1 slot.
+As stated above, not all SBCs work in this manner. You can try the PCI 1 alternate if you experience instability or lockups with the PCI 1 slot.
 
-## Allen Bradley/Rockwell Automation
+### Allen Bradley/Rockwell Automation
 
 The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resistors. The Rockwell backplane connections are as follows. At the time of this writting, I'm only aware of one configuration set.
 
