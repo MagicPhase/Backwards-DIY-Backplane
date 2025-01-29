@@ -42,6 +42,10 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 | PCI 0 (124-pin) | PCI |
 | PCI Mapper (36-pin) | PCI Mapper Card |
 
+# PCB Layout
+
+<img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
+
 # Usage with PISA/PCISA and Allen Bradley/Rockwell SBCs
 
 <img src="https://github.com/user-attachments/assets/c9eb16d7-81dd-4909-844c-6396f2b70f79" width=50% height=50%><br>
@@ -167,10 +171,6 @@ Be cautious when using screws with heads larger than 6.5mm! Depending on your ca
 Use extreme care when installing your SBC! The 188-pin slots are fragile and pin damage will occur if you install any card at an angle! 
 
 <img src="https://github.com/user-attachments/assets/570bd0ce-b6bc-40f8-8044-f34d3999328a" width=50% height=50%><br>
-
-# PCB Layout
-
-<img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=75% height=75%><br>
 
 # Backwards V1.0 Schematic
 [Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/Backplane_V1.0_schematic.pdf)
