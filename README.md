@@ -90,11 +90,11 @@ The Allen Bradley SBCs use pin C43 (column C pin 43) on the SBC slots.
 ## -IMPORTANT- 
 To double-check for correct configuration with PCISA SBCs, attach the ATX power supply with all other cards removed and power up the backplane. The LED indicators for the AB CPU 3.3V power should be unlit! This is important for proper function as the universal nature of the board utilizes these pins for CPU power on the Allen Bradley cards while conflicting with the PISA spec. While powering a PCISA card, the indicators may light up and that's normal. The important thing to consider is the indicators are unlit with no card installed!
 
-<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=33% height=33%><br>
+<img src="https://github.com/user-attachments/assets/1e527c3c-2a17-4363-bd2a-bd9eb2ba5340" width=50% height=50%><br>
 
 To properly use an Allen Bradley SBC, jumper JP2 and JP3 CPU power pins. To check for proper operations, attach ATX power with no cards installed and power up. You should see the CPU power indicators lit if the jumpers are installed and F1 fuse is good. F1 should be a 5A fuse.
 
-<img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=33% height=33%><br>
+<img src="https://github.com/user-attachments/assets/8dffa297-4125-4911-934f-8b2290447783" width=50% height=50%><br>
 
 # JP4 VBAT.
 
