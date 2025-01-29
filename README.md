@@ -186,7 +186,7 @@ This is a list of SBCs known to work with additional information.
 
 ### Allen Bradley/Rockwell Automation Boards
 * Allen Bradley 6189-1CPU233 (Rockwell Automation 140420-050) Socket 7 Intel MMX/AMD K6-2 -- WORKING
-* Allen Bradley 6189-1CPU566 (Rockwell Automation 140573-010) Socket 370 Intel -- WORKING
+* Allen Bradley 6189-1CPU566 (Rockwell Automation 140573-010) Socket 370 Intel P3 -- WORKING
 
 ### ISA SBCs
 * Advantech PCA-6145B -- WORKING
