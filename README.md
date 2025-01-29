@@ -120,46 +120,37 @@ The mapper card is reversible. This is a picture with all positions filled which
 
 The proper configuration of the mapper card for PISA consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor. For reference, the PISA spec has PCI1 (0 in my design) connected to AD19 and PCI2 (1 in my design) connected to AD20. These PCI addresses are specific to the SBC and may vary depending on the adherence to the PISA spec. Next is the interrupt matrix that consists of 4 (INT) interrupt lines from the SBC. The idea is to connect one of the intersecting lines with a 0 ohm resistor between each row (SBC side) to one of the columns (PCI side). The PISA spec states a standard configuration as follows.
 
-PCI1 (0 in my design)
-* IDSEL A19
-* SBC INT A to PCI A
-* SBC INT B to PCI B
-* SBC INT C to PCI C
-* SBC INT D to PCI D
+| PCI POSITION | IDSEL | SBC INT PIN | PCI INT PIN |
+| ------------- | ------------- | ------------- | ------------- |
+| PCI 0 | A19 | A | A | 
+|  |  | B | B |
+|  |  | C | C |
+|  |  | D | D | 
+| PCI 1 | A20 | A | D | 
+|  |  | B | A |
+|  |  | C | B |
+|  |  | D | C | 
+| PCI 1 (PCISA ALTERNATE) | A20 | A | B | 
+|  |  | B | C |
+|  |  | C | D |
+|  |  | D | A | 
 
-PCI2 (0 in my design)
-* IDSEL A20
-* SBC INT A to PCI D
-* SBC INT B to PCI A
-* SBC INT C to PCI B
-* SBC INT D to PCI C
-
-### As stated above, not all SBCs work in this manner and I've found alternate wiring for PCI2 (1 in my design).
-
-PCI2 (1 in my design)
-* IDSEL A20
-* SBC INT A to PCI B
-* SBC INT B to PCI C
-* SBC INT C to PCI D
-* SBC INT D to PCI A
+### As stated above, not all SBCs work in this manner. You can try the PCI 1 alternate if you experience instability or lockups with the PCI 1 slot.
 
 ## Allen Bradley/Rockwell Automation
 
 The proper configuration of the mapper card for Allen Bradley/Rockwell Automation consists of one IDSEL pin from PCI0 and PCI1 to be connected with one of the available PCI ADxx pins using a 100 ohm 0603 resistor and the interrupt matrix intersection connected with 0 ohm resistors. The Rockwell backplane connections are as follows.
 
-PCI1 (0 in my design)
-* IDSEL A28
-* SBC INT A to PCI C
-* SBC INT B to PCI A
-* SBC INT C to PCI D
-* SBC INT D to PCI B
-
-PCI2 (1 in my design)
-* IDSEL A29
-* SBC INT A to PCI B
-* SBC INT B to PCI D
-* SBC INT C to PCI C
-* SBC INT D to PCI A
+| PCI POSITION | IDSEL | SBC INT PIN | PCI INT PIN |
+| ------------- | ------------- | ------------- | ------------- |
+| PCI 0 | A28 | A | C | 
+|  |  | B | A |
+|  |  | C | D |
+|  |  | D | B | 
+| PCI 1 | A29 | A | B | 
+|  |  | B | D |
+|  |  | C | C |
+|  |  | D | A | 
 
 # Mounting
 
