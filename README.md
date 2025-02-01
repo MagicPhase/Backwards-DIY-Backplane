@@ -15,7 +15,7 @@
 The Backwards Backplane is a universal backplane compatible with "half-size" PISA/PCISA, Allen Bradley/Rockwell Automation, and ISA single-board computers (SBC). <ins>Please read ALL sections before using the Backplane!!</ins>
 Active discussion about this project can be found on [VOGONS](https://www.vogons.org/viewtopic.php?t=102519) and [VCFED](https://forum.vcfed.org/index.php?threads/project-backwards-a-universal-backplane-for-pisa-pcisa-allen-bradley-and-isa-half-size-sbcs-seeking-volunteers-for-testing.1250989/)
 
-<img src="https://github.com/user-attachments/assets/c95d8719-b80a-44b2-b4d6-e13d983e4513" width=50% height=50%><img src="https://github.com/user-attachments/assets/4e58e20b-b4cf-4450-8b60-b019ba01f1a5" width=50% height=50%><br>
+<img src="https://github.com/user-attachments/assets/c95d8719-b80a-44b2-b4d6-e13d983e4513" width=50% height=50%><img src="https://github.com/user-attachments/assets/1b640abe-a5ca-4b1a-8a96-876619d50384" width=50% height=50%><br>
 
 ## Features:
 * Two 188-pin PCI/ISA combination slots (Compatible with PISA/PCISA, Allen Bradley/Rockwell Automation, and ISA)
