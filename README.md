@@ -83,6 +83,9 @@ Only the ISA pins are connected when using ISA SBCs. JP1, JP2, JP3, and JP4 are 
 
 # JP1 Reset Function
 
+<img src="https://github.com/user-attachments/assets/b0a1a0da-0626-4539-8917-b73eb04b394a" width=50% height=50%><br>
+
+
 JP1 controls which SBC slot pin is connected to the reset switch SW2. JP1 (reset function) needs to be set correctly while the SBC needs to support reset on the SBC slot to work. For PCISA cards, this is pin C22 (column C pin 22 lower row) on the SBC slot. This pin is pulled to ground through a 500 ohm resistor through the RESET switch SW2. Determining whether your SBC supports resetting through the slot pin might be found in the manual for your specific board, or simply trying the reset button on the backplane to see if it works. Also, your board may support resetting, but the connection may be unpopulated on the SBC itself. For instance, on my PCISA-C400R-RS, the reset line through R157 on the SBC was missing. After installing a 500 ohm resistor, the reset function works as expected.
 
 <img src="https://github.com/user-attachments/assets/0929d033-185e-4cb8-8a08-d3a3c338e68c" width=33% height=33%><br>
