@@ -42,6 +42,13 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 | PCI 0 (124-pin) | PCI |
 | PCI Mapper (36-pin) | PCI Mapper Card |
 
+## -IMPORTANT- Issue with V1.0 boards!
+
+Clearance on JP1 using SBC slot 1 is tight! The PCISA SBCs have slightly more clearance than the Allen Bradley's. Please ensure the card isn't being obstructed by JP1 when installing. You can bend JP1 slightly inward to maximize clearance. If this is a problem, consider using SBC slot 2 instead. *Planned fix for next board revision.
+
+<img src="https://github.com/user-attachments/assets/80044e02-7af2-4576-a66e-f70abf9aaf0c" width=33% height=33%><br>
+<img src="https://github.com/user-attachments/assets/c6cc2c2c-ecfe-4088-a294-4a70f97cf9a1" width=33% height=33%><br>
+
 # PCB Layout
 
 <img src="https://github.com/user-attachments/assets/ccfa76fb-d095-414d-8fd7-0bfb9796c920" width=50% height=50%><br>
@@ -55,13 +62,6 @@ The backplane has 3 SBC slots. While all are ISA compatible, slots 1 and 2 are d
 This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of.
 
 JP1 (reset function) should be moved to position one (left 1-2). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated! Please refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
-
-## -IMPORTANT- Issue with V1.0 boards!
-
-Clearance on JP1 using SBC slot 1 is tight! The PCISA SBCs have slightly more clearance than the Allen Bradley's. Please ensure the card isn't being obstructed by JP1 when installing. You can bend JP1 slightly inward to maximize clearance. If this is a problem, consider using SBC slot 2 instead. *Planned fix for next board revision.
-
-<img src="https://github.com/user-attachments/assets/80044e02-7af2-4576-a66e-f70abf9aaf0c" width=33% height=33%><br>
-<img src="https://github.com/user-attachments/assets/c6cc2c2c-ecfe-4088-a294-4a70f97cf9a1" width=33% height=33%><br>
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
