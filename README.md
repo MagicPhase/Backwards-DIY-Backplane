@@ -56,7 +56,7 @@ This is an example of a compatible PCISA SBC you can use in the Backwards backpl
 
 JP1 (reset function) should be moved to position one (left 1-2). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated! Please refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
 
-### -IMPORTANT- Issue with V1.0 boards!
+## -IMPORTANT- Issue with V1.0 boards!
 
 Clearance on JP1 using SBC slot 1 is tight! The PCISA SBCs have slightly more clearance than the Allen Bradley's. Please ensure the card isn't being obstructed by JP1 when installing. You can bend JP1 slightly inward to maximize clearance. If this is a problem, consider using SBC slot 2 instead. *Planned fix for next board revision.
 
