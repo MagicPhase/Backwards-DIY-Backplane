@@ -9,7 +9,7 @@
 * [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
 * [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
 * [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
-* [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#backwards-v10-schematic)
+* [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backplane_V1.0_schematic.pdf)
 * [Known working SBC list](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/README.md#known-working-sbc-list)
 
 The Backwards Backplane is a universal backplane compatible with "half-size" PISA/PCISA, Allen Bradley/Rockwell Automation, and ISA single-board computers (SBC). <ins>Please read ALL sections before using the Backplane!!</ins>
@@ -84,7 +84,7 @@ This is an example of an ISA half-size SBC (Advantech PCA-6145B).
 
 The three SBC slots 1,2 and,3 are all compatible with ISA SBCs. This is possible in slots 1 and 2 due to their dual-level pin nature and the upper row being all pins related to the ISA BUS. While you can use ISA SBCs in any slot, there are a few things to remember. The pins of the SBC dual-level slots have reduced widths based on the slot type's specifications. This means the current carrying capability of these pins is also reduced. When using an ISA SBC, you should install this card into SBC slot 3 which is a true ISA slot. If using SBC slot 1 or 2, you may want to consider powering the SBC using its auxiliary power connection if you experience any instability. This aux power input will be specific to the manufacture and you should refer to the manual of the board you're using. 
 
-It should also be noted that there is both series and parallel termination on the ISA BUS. The series termination happens between SBC slot 2 and the ISA slot (SBC 3) while the parallel termination happens elsewhere on the board. Please refer to the [schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/Backplane_V1.0_schematic.pdf) for more information. 
+It should also be noted that there is both series and parallel termination on the ISA BUS. The series termination happens between SBC slot 2 and the ISA slot (SBC 3) while the parallel termination happens elsewhere on the board. Please refer to the [schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backplane_V1.0_schematic.pdf) for more information. 
 
 Only the ISA pins are connected when using ISA SBCs. JP1, JP2, JP3, and JP4 are not relevant here and you will not have reset function unless you jumper a compatible reset line from the SBC to the backplane. Refer to your SBC manual for an external reset line if present. 
 
@@ -183,7 +183,7 @@ Use extreme care when installing your SBC! The 188-pin slots are fragile and pin
 <img src="https://github.com/user-attachments/assets/570bd0ce-b6bc-40f8-8044-f34d3999328a" width=50% height=50%><br>
 
 # Backwards V1.0 Schematic
-[Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/Backplane_V1.0_schematic.pdf)
+[Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backplane_V1.0_schematic.pdf)
 
 # Known working SBC list
 
