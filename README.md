@@ -8,7 +8,7 @@
 * [JP4 VBAT](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#jp4-vbat)
 * [PCI Mapper Card](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pci-mapper-card)
 * [Mounting](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#mounting)
-* [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout)
+* [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backwards_V1.0_PCB_layout.png)
 * [Backwards V1.0 Schematic](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backplane_V1.0_schematic.pdf)
 * [Known working SBC list](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/README.md#known-working-sbc-list)
 
@@ -33,7 +33,7 @@ Active discussion about this project can be found on [VOGONS](https://www.vogons
 | [Allen Bradley/Rockwell](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#usage-with-pisapcisa-and-allen-bradleyrockwell-sbcs) | [JP1](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp1-reset-function) (2-3) / [JP2](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp2-and-jp3-power-pins) (CLOSED) / [JP3](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp2-and-jp3-power-pins) (CLOSED) / [JP4](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#jp4-vbat) (CLOSED) |
 | [ISA](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main#usage-with-isa-sbcs) | NA |
 
-| [SLOTS (IN ORDER)](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main?tab=readme-ov-file#pcb-layout)  | CARD TYPE USAGE |
+| [SLOTS (IN ORDER)](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backwards_V1.0_PCB_layout.png)  | CARD TYPE USAGE |
 | ------------- | ------------- |
 | SBC 1 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
 | SBC 2 (188-pin) | PISA/PCISA, Allen Bradley/Rockwell, ISA Card or SBC |
@@ -61,7 +61,7 @@ The backplane has 3 SBC slots. While all are ISA compatible, slots 1 and 2 are d
 
 This is an example of a compatible PCISA SBC you can use in the Backwards backplane ([PCISA-C400R-RS-R20](https://www.ieiboards.net/iei/pcisa-c400r-rs-r20)). At its heart, the backplane is a purely passive device that connects the SBC to the other card slots. While none of the active hardware on the backplane is required, there are a few jumpers to be aware of.
 
-JP1 (reset function) should be moved to position one (left 1-2). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated! Please refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
+JP1 (reset function) should be moved to position one (left 1-2). JP2 and JP3 CPU power jumpers as well as JP4 (VBAT) should be unpopulated! Please refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backwards_V1.0_PCB_layout.png).
 
 Note that PISA refers to the PCI/ISA backplane specification put out by Kontron https://www.kontron.com/download/download?filename=/downloads/white_papers/pisad218.pdf. SBCs with the label "PCISA" refer to a similar standard that is mostly compatible with the exception of the PCI interrupt routing in some cases. While PISA and PCISA can be considered mostly compatible with respect to backplanes, proper interrupt routing is required for 100% functionality of the PCI cards. 
 To make this backplane "universal", I've included a PCI mapper card that can be configured to any combination of interrupt and IDSEL for the PCI slots. The SBC manufacturer determines the interrupt and IDSEL for the PCI slots, which are a product of the physical wiring and BIOS hard-coded PCI identification.
@@ -74,7 +74,7 @@ This is an example of an Allen Bradley 6189-1CPU233. It's important to note that
 
 The Allen Bradley SBCs use a proprietary implementation of the PCI/ISA SBC slot. The universal nature of this backplane requires special consideration for these differences. One important aspect is the need to inject 3.3V CPU power through 8 of the lower pins that are reserved for PCI functions as well as ground and reset in the PISA spec! These power pins are left floating under normal conditions. Also, the reset line for Allen Bradley SBCs is commonly a VCC power pin on the PISA spec. 
 
-JP1 (reset function) should be in position 2 (right 2-3). Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. Also, refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane?tab=readme-ov-file#pcb-layout).
+JP1 (reset function) should be in position 2 (right 2-3). Please continue reading for information about JP1, JP2, JP3, and JP4 as it pertains to proper operations for Allen Bradley SBCs. Also, refer to the [PCB Layout](https://github.com/MagicPhase/Backwards-DIY-Backplane/blob/main/BOARD_FILES/Backwards_V1.0_PCB_layout.png).
 
 # Usage with ISA SBCs
 
