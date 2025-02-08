@@ -1,4 +1,4 @@
-# Backwards-DIY-Backplane
+# Backwards-Backplane
 
 ## Index
 * [Usage with PISA/PCISA and Allen Bradley/Rockwell SBCs](https://github.com/MagicPhase/Backwards-DIY-Backplane/tree/main#usage-with-pisapcisa-and-allen-bradleyrockwell-sbcs)
