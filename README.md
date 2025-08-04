@@ -1,3 +1,5 @@
+For those that are interested in an assembled backplane, check my eBay -> https://www.ebay.com/usr/tevianbusselle.
+
 # Backwards-Backplane
 
 ## Index
